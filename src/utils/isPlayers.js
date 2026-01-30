@@ -14,21 +14,9 @@ export function isPlayerHome(r, c) {
 
   return null;
 }
-export function isAnyBluePlayerHere(r, c, positions) {
-  for (let i = 0; i < positions.blue.length; i++) {
-    if (
-      r == BLUE_PATH[positions.blue[i]].r &&
-      c == BLUE_PATH[positions.blue[i]].c
-    )
-      return i;
-  }
-}
-export function isAnyRedPlayerHere(r, c, positions) {
-  for (let i = 0; i < positions.red.length; i++) {
-    if (
-      r == REDS_PATH[positions.red[i]].r &&
-      c == REDS_PATH[positions.red[i]].c
-    )
+export function isAnyPlayerHere(r, c, playerPositions, PATH) {
+  for (let i = 0; i < playerPositions.length; i++) {
+    if (r == PATH[playerPositions[i]].r && c == PATH[playerPositions[i]].c)
       return i;
   }
 }

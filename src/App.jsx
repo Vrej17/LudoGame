@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import Player from "./components/Player";
 import Dice from "./components/Dice";
 import "./App.css";
-import { SIZE, PLAYER_FIELD_COLORS, CELL } from "./constants/constants";
+import {
+  SIZE,
+  PLAYER_FIELD_COLORS,
+  CELL,
+  BLUE_PATH,
+  REDS_PATH,
+} from "./constants/constants";
 import {
   isPlayerHome,
-  isAnyBluePlayerHere,
-  isAnyRedPlayerHere,
+  isAnyPlayerHere,
 } from "./utils/isPlayers";
 import { updatePosition } from "./utils/updatePosition";
 
@@ -72,8 +77,8 @@ export default function App() {
           else if (c === 7 && r > 7) wayPoint = PLAYER_FIELD_COLORS.blue;
 
           const home = isPlayerHome(r, c);
-          const idxOfBluePlayer = isAnyBluePlayerHere(r, c, positions);
-          const idxOfRedPlayer = isAnyRedPlayerHere(r, c, positions);
+          const idxOfBluePlayer = isAnyPlayerHere(r, c, positions.blue, BLUE_PATH);
+          const idxOfRedPlayer = isAnyPlayerHere(r, c, positions.red, REDS_PATH);
 
           return (
             <div
