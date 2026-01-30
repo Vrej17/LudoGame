@@ -1,0 +1,38 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.player-bounce {
+  animation: bounce 0.4s infinite;
+}
+
+.winner-container {
+  position: absolute;
+  border: 1px solid dimgrey;
+  background-color: #00000030;
+  padding: 20px;
+  border-radius: 10px;
+  top: 50px;
+  right: 50%;
+  transform: translateX(50%);
+  color: black;
+  font-size: 1.5rem;
+}
+
+.winner-container > button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
